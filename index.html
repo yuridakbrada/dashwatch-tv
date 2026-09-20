@@ -10,58 +10,61 @@
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
-            background: #f4f4f4;
-            color: #111;
+            margin: 0;
+            background: #fff;
+            color: #171717;
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        header {
-            background: #111;
-            color: white;
-            border-bottom: 5px solid #d71920;
-            padding: 25px 20px;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .header-content {
+        header {
+            border-bottom: 1px solid #222;
+        }
+
+        .top {
             max-width: 1100px;
             margin: auto;
+            padding: 22px 20px 16px;
+            text-align: center;
         }
 
         .logo {
             font-family: Georgia, serif;
-            font-size: 42px;
+            font-size: 38px;
             font-weight: bold;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
         }
 
-        .subtitle {
-            margin-top: 5px;
-            color: #ccc;
-            font-size: 14px;
+        .logo span {
+            color: #d71920;
+        }
+
+        .tv-label {
+            margin-top: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #d71920;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         nav {
-            background: white;
-            border-bottom: 1px solid #ddd;
-            padding: 12px 20px;
-        }
-
-        nav div {
-            max-width: 1100px;
-            margin: auto;
+            border-top: 1px solid #ddd;
+            padding: 11px 20px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
         }
 
         nav a {
-            color: #111;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 25px;
-            font-size: 14px;
+            margin: 0 14px;
         }
 
         nav a:hover {
@@ -70,69 +73,397 @@
 
         main {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
-        .page-title {
-            font-family: Georgia, serif;
-            font-size: 38px;
-            border-bottom: 3px solid #111;
-            padding-bottom: 12px;
-            margin-bottom: 10px;
+        .intro {
+            border-bottom: 3px solid #222;
+            padding-bottom: 15px;
+            margin-bottom: 28px;
         }
 
-        .page-description {
+        .intro h1 {
+            font: bold 38px/1.05 Georgia, serif;
+            margin: 0 0 8px;
+        }
+
+        .intro p {
+            margin: 0;
             color: #555;
-            margin-bottom: 35px;
-            font-size: 16px;
+            line-height: 1.5;
         }
 
-        .social-section {
-            background: white;
-            border: 1px solid #ddd;
-            margin-bottom: 35px;
-            padding: 25px;
+        .section {
+            border-bottom: 3px solid #222;
+            margin-top: 35px;
+            padding-bottom: 8px;
+            font: bold 24px Georgia, serif;
         }
 
-        .social-title {
-            font-family: Georgia, serif;
-            font-size: 27px;
-            margin-bottom: 8px;
+        .section:first-of-type {
+            margin-top: 0;
         }
 
-        .social-description {
-            color: #666;
-            margin-bottom: 20px;
+        .section-description {
+            color: #555;
+            font-size: 13px;
+            margin: 9px 0 18px;
         }
 
-        .red-line {
-            width: 60px;
-            height: 4px;
-            background: #d71920;
-            margin-bottom: 25px;
+        .feed {
+            width: 100%;
+            min-height: 300px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            overflow: hidden;
         }
 
-        footer {
-            background: #111;
-            color: #aaa;
+        .feed-placeholder {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
+            padding: 30px;
+            color: #777;
             font-size: 13px;
         }
 
-        @media (max-width: 600px) {
+        .feed-placeholder strong {
+            display: block;
+            color: #171717;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .youtube-feed {
+            width: 100%;
+            min-height: 500px;
+        }
+
+        .youtube-feed iframe {
+            width: 100%;
+            height: 500px;
+            border: 0;
+            display: block;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #d71920;
+        }
+
+        .social-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 55px;
+            padding: 27px 18px 16px;
+            background: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer > strong {
+            display: block;
+            margin-bottom: 3px;
+            font-family: Georgia, serif;
+            font-size: 22px;
+        }
+
+        footer > br + span {
+            font-size: 13px;
+            opacity: .65;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 22px auto 16px;
+            padding: 18px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 55px;
+            border-top: 1px solid rgba(255,255,255,.12);
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+
+        .footer-section {
+            min-width: 140px;
+        }
+
+        .footer-title {
+            margin-bottom: 9px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: .7px;
+            opacity: .6;
+        }
+
+        .footer-team {
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .social-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .social-logos img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        body.dark-mode .social-logos img {
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-copy {
+            font-size: 11px;
+            opacity: .45;
+        }
+
+        body:not(.dark-mode) footer {
+            background: #fff;
+            color: #111;
+        }
+
+        body:not(.dark-mode) .footer-content {
+            border-color: rgba(0,0,0,.12);
+        }
+
+        body:not(.dark-mode) .footer-title {
+            opacity: .65;
+        }
+
+        body:not(.dark-mode) .footer-copy {
+            opacity: .5;
+        }
+
+        body:not(.dark-mode) .x-logo {
+            filter: brightness(0);
+        }
+
+        body.dark-mode footer {
+            background: #111;
+            color: #fff;
+        }
+
+        body.dark-mode .footer-content {
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        body.dark-mode .x-logo {
+            filter: none;
+        }
+
+        /* Botões */
+
+        #theme-toggle,
+        #language-toggle {
+            position: fixed;
+            top: 18px;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            box-sizing: border-box;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #aaa;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+
+            transition: transform 0.15s ease;
+            z-index: 1000;
+        }
+
+        #theme-toggle {
+            right: 20px;
+            color: #111;
+            font-size: 18px;
+        }
+
+        #language-toggle {
+            right: 68px;
+            overflow: hidden;
+        }
+
+        #language-toggle img {
+            width: 24px;
+            height: 18px;
+            object-fit: cover;
+            display: block;
+        }
+
+        #theme-toggle:active,
+        #language-toggle:active {
+            transform: scale(0.9);
+        }
+
+        body.dark-mode #theme-toggle,
+        body.dark-mode #language-toggle {
+            background: #222;
+            border-color: #555;
+        }
+
+        body.dark-mode #theme-toggle {
+            color: #fff;
+        }
+
+        body.dark-mode {
+            background: #111;
+            color: #eee;
+        }
+
+        body.dark-mode header {
+            border-color: #333;
+        }
+
+        body.dark-mode nav {
+            border-color: #333;
+        }
+
+        body.dark-mode nav a {
+            color: #eee;
+        }
+
+        body.dark-mode nav a:hover {
+            color: #d71920;
+        }
+
+        body.dark-mode .intro {
+            border-color: #ddd;
+        }
+
+        body.dark-mode .intro p,
+        body.dark-mode .section-description {
+            color: #bbb;
+        }
+
+        body.dark-mode .section {
+            border-color: #ddd;
+        }
+
+        body.dark-mode .feed {
+            border-color: #444;
+            background: #181818;
+        }
+
+        body.dark-mode .feed-placeholder {
+            color: #888;
+        }
+
+        body.dark-mode .feed-placeholder strong {
+            color: #eee;
+        }
+
+        body.dark-mode footer {
+            border-color: #333;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            main {
+                width: 100%;
+                margin: 18px auto;
+                padding: 0 12px;
+            }
+
+            .top {
+                padding: 16px 12px 10px;
+            }
+
             .logo {
-                font-size: 32px;
+                font-size: 27px;
             }
 
-            .page-title {
-                font-size: 30px;
+            .tv-label {
+                font-size: 10px;
             }
 
-            .social-section {
-                padding: 18px;
+            nav {
+                padding: 8px;
+                font-size: 10px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 3px 5px;
+            }
+
+            #theme-toggle {
+                top: 12px;
+                right: 12px;
+            }
+
+            #language-toggle {
+                top: 12px;
+                right: 60px;
+            }
+
+            .intro h1 {
+                font-size: 28px;
+            }
+
+            .intro p {
+                font-size: 13px;
+            }
+
+            .section {
+                margin-top: 25px;
+                padding-bottom: 6px;
+                font-size: 20px;
+            }
+
+            .feed-placeholder {
+                min-height: 220px;
+            }
+
+            .youtube-feed {
+                min-height: 350px;
+            }
+
+            .youtube-feed iframe {
+                height: 350px;
+            }
+
+            footer {
+                margin-top: 28px;
+                padding: 18px 12px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 18px;
+                padding: 15px 0;
+            }
+
+            .footer-section {
+                min-width: 0;
             }
         }
     </style>
@@ -141,125 +472,186 @@
 <body>
 
 <header>
-    <div class="header-content">
-        <div class="logo">DASHWATCH</div>
-        <div class="subtitle">Notícias e informações de Geometry Dash</div>
+
+    <div class="top">
+
+        <div class="logo">
+            DASH<span>WATCH</span>
+        </div>
+
+        <div class="tv-label">
+            TV
+        </div>
+
     </div>
+
+    <nav>
+        <a href="https://dashwatch.news/">PORTAL</a>
+        <a href="https://tv.dashwatch.news/">DASHWATCH TV</a>
+    </nav>
+
 </header>
 
-<nav>
-    <div>
-        <a href="https://dashwatch.news/">PORTAL</a>
-        <a href="#">DASHWATCH TV</a>
-    </div>
-</nav>
+<button id="theme-toggle" aria-label="Alternar tema">
+    ☾
+</button>
+
+
 
 <main>
 
-    <h1 class="page-title">REDES SOCIAIS</h1>
+    <div class="intro">
 
-    <p class="page-description">
-        Acompanhe as últimas publicações do DashWatch no Instagram,
-        X e YouTube em um só lugar.
+        <h1>DashWatch TV</h1>
+
+        <p>
+            Os últimos vídeos e publicações do DashWatch,
+            reunidos em um só lugar.
+        </p>
+
+    </div>
+
+    <div class="section">
+        YOUTUBE
+    </div>
+
+    <p class="section-description">
+        Confira os vídeos mais recentes publicados pelo DashWatch.
     </p>
 
+    <div class="feed youtube-feed">
 
-    <!-- INSTAGRAM -->
-    <section class="social-section">
+        <script src="https://s.electricblaze.com/widget.js" defer></script>
+        <div class="electricblaze-id-2UhxHIa"></div>
 
-        <h2 class="social-title">📸 Instagram</h2>
+    </div>
 
-        <div class="red-line"></div>
+    <div class="section">
+        INSTAGRAM
+    </div>
 
-        <p class="social-description">
-            As últimas publicações do DashWatch no Instagram.
-        </p>
+    <p class="section-description">
+        As últimas publicações do DashWatch no Instagram.
+    </p>
 
-        <!--
-            SUBSTITUA 00000 PELO ID DO SEU WIDGET
-        -->
+    <div class="feed">
 
-        <div
-            class="sk-instagram-feed"
-            data-embed-id="00000">
-        </div>
+        <div class="electricblaze-id-2UhxHIb"></div>
 
-    </section>
+    </div>
 
-
-    <!-- X / TWITTER -->
-    <section class="social-section">
-
-        <h2 class="social-title">𝕏 X / Twitter</h2>
-
-        <div class="red-line"></div>
-
-        <p class="social-description">
-            Confira as últimas publicações do DashWatch no X.
-        </p>
-
-        <!--
-            SUBSTITUA 00000 PELO ID DO SEU WIDGET
-        -->
-
-        <div
-            class="sk-ww-x-profile"
-            data-embed-id="00000">
-        </div>
-
-    </section>
-
-
-    <!-- YOUTUBE -->
-    <section class="social-section">
-
-        <h2 class="social-title">▶ YouTube</h2>
-
-        <div class="red-line"></div>
-
-        <p class="social-description">
-            Os vídeos mais recentes do DashWatch.
-        </p>
-
-        <!--
-            SUBSTITUA 00000 PELO ID DO SEU WIDGET
-        -->
-
-        <div
-            class="sk-ww-youtube-channel-videos"
-            data-embed-id="00000">
-        </div>
-
-    </section>
+    <a
+        class="social-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer">
+        VER NO INSTAGRAM →
+    </a>
 
 </main>
 
 
+
 <footer>
-    © 2026 DashWatch — Notícias e informações de Geometry Dash.
+
+    <strong>DASHWATCH</strong>
+    <br>
+
+    <span>
+        Notícias e informações de Geometry Dash.
+    </span>
+
+
+
+    <div class="footer-content">
+
+        <div class="footer-section">
+
+            <div class="footer-title">
+                Equipe
+            </div>
+
+            <div class="footer-team">
+                <strong>yuridakbrada</strong><br>
+                Fundador
+            </div>
+
+        </div>
+
+        <div class="footer-section">
+
+            <div class="footer-title">
+                Redes sociais
+            </div>
+
+            <div class="social-logos">
+
+                <a href="#" target="_blank">
+                    <img
+                        src="https://dashwatch.news/assets/instagram-icon.svg"
+                        alt="Instagram">
+                </a>
+
+                <a href="#" target="_blank">
+                    <img
+                        src="https://dashwatch.news/assets/youtube-icon.svg"
+                        alt="YouTube">
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-copy">
+        © 2026 DashWatch. Todos os direitos reservados.
+    </div>
+
 </footer>
 
 
-<!--
-    SCRIPTS DOS WIDGETS
 
-    O SociableKIT fornece os scripts específicos
-    quando você criar cada widget.
--->
+<script>
 
-<script
-    src="https://widgets.sociablekit.com/instagram-feed/widget.js"
-    defer>
-</script>
+    const themeToggle = document.getElementById("theme-toggle");
 
-<script
-    src="https://widgets.sociablekit.com/x-feed/widget.js"
-    defer>
-</script>
+    function updateThemeIcon() {
 
-<script
-    src="https://widgets.sociablekit.com/youtube-channel-videos/widget.js"
-    defer>
+        if (document.body.classList.contains("dark-mode")) {
+            themeToggle.textContent = "☀";
+        } else {
+            themeToggle.textContent = "☾";
+        }
+
+    }
+
+    const savedTheme = localStorage.getItem("dashwatch-theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    updateThemeIcon();
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        const dark =
+            document.body.classList.contains("dark-mode");
+
+        localStorage.setItem(
+            "dashwatch-theme",
+            dark ? "dark" : "light"
+        );
+
+        updateThemeIcon();
+
+    });
+
 </script>
 
 </body>
