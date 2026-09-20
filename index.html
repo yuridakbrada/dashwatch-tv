@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DashWatch TV</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #111;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            border-bottom: 5px solid #d71920;
+            padding: 25px 20px;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            margin-top: 5px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #ddd;
+            padding: 12px 20px;
+        }
+
+        nav div {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav a {
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d71920;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            border-bottom: 3px solid #111;
+            padding-bottom: 12px;
+            margin-bottom: 10px;
+        }
+
+        .page-description {
+            color: #555;
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        .social-section {
+            background: white;
+            border: 1px solid #ddd;
+            margin-bottom: 35px;
+            padding: 25px;
+        }
+
+        .social-title {
+            font-family: Georgia, serif;
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .social-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .red-line {
+            width: 60px;
+            height: 4px;
+            background: #d71920;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 32px;
+            }
+
+            .page-title {
+                font-size: 30px;
+            }
+
+            .social-section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">DASHWATCH</div>
+        <div class="subtitle">Notícias e informações de Geometry Dash</div>
+    </div>
+</header>
+
+<nav>
+    <div>
+        <a href="https://dashwatch.news/">PORTAL</a>
+        <a href="#">NOTÍCIAS</a>
+        <a href="#">DASHWATCH TV</a>
+    </div>
+</nav>
+
+<main>
+
+    <h1 class="page-title">REDES SOCIAIS</h1>
+
+    <p class="page-description">
+        Acompanhe as últimas publicações do DashWatch no Instagram,
+        X e YouTube em um só lugar.
+    </p>
+
+
+    <!-- INSTAGRAM -->
+    <section class="social-section">
+
+        <h2 class="social-title">📸 Instagram</h2>
+
+        <div class="red-line"></div>
+
+        <p class="social-description">
+            As últimas publicações do DashWatch no Instagram.
+        </p>
+
+        <!--
+            SUBSTITUA 00000 PELO ID DO SEU WIDGET
+        -->
+
+        <div
+            class="sk-instagram-feed"
+            data-embed-id="00000">
+        </div>
+
+    </section>
+
+
+    <!-- X / TWITTER -->
+    <section class="social-section">
+
+        <h2 class="social-title">𝕏 X / Twitter</h2>
+
+        <div class="red-line"></div>
+
+        <p class="social-description">
+            Confira as últimas publicações do DashWatch no X.
+        </p>
+
+        <!--
+            SUBSTITUA 00000 PELO ID DO SEU WIDGET
+        -->
+
+        <div
+            class="sk-ww-x-profile"
+            data-embed-id="00000">
+        </div>
+
+    </section>
+
+
+    <!-- YOUTUBE -->
+    <section class="social-section">
+
+        <h2 class="social-title">▶ YouTube</h2>
+
+        <div class="red-line"></div>
+
+        <p class="social-description">
+            Os vídeos mais recentes do DashWatch.
+        </p>
+
+        <!--
+            SUBSTITUA 00000 PELO ID DO SEU WIDGET
+        -->
+
+        <div
+            class="sk-ww-youtube-channel-videos"
+            data-embed-id="00000">
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 DashWatch — Notícias e informações de Geometry Dash.
+</footer>
+
+
+<!--
+    SCRIPTS DOS WIDGETS
+
+    O SociableKIT fornece os scripts específicos
+    quando você criar cada widget.
+-->
+
+<script
+    src="https://widgets.sociablekit.com/instagram-feed/widget.js"
+    defer>
+</script>
+
+<script
+    src="https://widgets.sociablekit.com/x-feed/widget.js"
+    defer>
+</script>
+
+<script
+    src="https://widgets.sociablekit.com/youtube-channel-videos/widget.js"
+    defer>
+</script>
+
+</body>
+</html>
